@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Add Task{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <div class="card">
+        <h2>Add New Task</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="title" required placeholder="Enter task title">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea name="description" rows="5" placeholder="Enter task description"></textarea>
+            </div>
+            <button type="submit" class="btn primary">Add Task</button>
+            <a href="{{ url_for('dashboard') }}" class="btn">Back to Dashboard</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

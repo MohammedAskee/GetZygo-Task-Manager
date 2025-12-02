@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Task Manager{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alerts">
+                    {% for category, msg in messages %}
+                        <div class="alert alert-{{ category }}">{{ msg }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <nav class="navbar">
+            <h1><a href="{{ url_for('dashboard') }}">GetZygo</a></h1>
+            <div class="nav-links">
+                <a href="{{ url_for('add_task') }}">Add Task</a>
+                <a href="{{ url_for('view_tasks') }}">View Tasks</a>
+                <a href="{{ url_for('update_task_form') }}">Update Task</a>
+                <a href="{{ url_for('delete_task_form') }}">Delete Task</a>
+            </div>
+        </nav>
+
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Hide Flash Messages after Sometime -->
+    <script>
+        setTimeout(() => {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                alert.style.opacity = '0';
+                setTimeout(() => alert.style.display = 'none', 200);
+            });
+        }, 1000);
+    </script>
+
+</body>
+</html>

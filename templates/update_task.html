@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Update Task{% endblock %}
+
+{% block content %}
+<div class="form-card">
+    <h2>Update Task</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label>Enter Task ID</label>
+            <input type="number" name="task_id" required placeholder="Task ID">
+        </div>
+        <button class="btn primary" type="submit">Find Task</button>
+        <a href="{{ url_for('dashboard') }}" class="btn">Cancel</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1 class="welcome-text">Welcome to Task Manager</h1>
+
+<div class="dashboard">
+    <div class="stats-grid">
+        <div class="stat-card"><h3>{{ total }}</h3><p>Total</p></div>
+        <div class="stat-card pending"><h3>{{ pending }}</h3><p>Pending</p></div>
+        <div class="stat-card completed"><h3>{{ completed }}</h3><p>Completed</p></div>
+    </div>
+
+    <div class="task-section">
+        <div class="section-header">
+            <h2>Tasks</h2>
+            <div class="filters">
+                <a href="/" class="{% if not request.args.get('status') %}active{% endif %}">All</a>
+                <a href="/?status=Pending" class="{% if request.args.get('status') == 'Pending' %}active{% endif %}">Pending</a>
+                <a href="/?status=Completed" class="{% if request.args.get('status') == 'Completed' %}active{% endif %}">Completed</a>
+            </div>
+        </div>
+
+        {% if tasks %}
+        <div class="task-list">
+            {% for task in tasks %}
+            <div class="task-card">
+                <div class="task-info">
+                    <h3>{{ task.title }}</h3>
+                    <p>{{ task.description }}</p>
+                    <span class="status {{ task.status.lower() }}">{{ task.status }}</span>
+                </div>
+                <div class="task-actions">
+                    <a href="{{ url_for('edit_task', task_id=task.task_id) }}" class="btn edit">Edit</a>
+                    <a href="{{ url_for('delete_task', task_id=task.task_id) }}" class="btn delete" 
+                       onclick="return confirm('Delete this task?')">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="empty">No tasks yet. <a href="{{ url_for('add_task') }}">Add one!</a></p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

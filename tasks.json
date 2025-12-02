@@ -1,0 +1,56 @@
+[
+    {
+        "task_id": 2,
+        "title": "Study Data Structures",
+        "description": "Revise Trees, Graphs, and Complexity Analysis",
+        "status": "Completed"
+    },
+    {
+        "task_id": 3,
+        "title": "Buy Groceries",
+        "description": "Milk, eggs, rice, bread, vegetables",
+        "status": "Pending"
+    },
+    {
+        "task_id": 4,
+        "title": "Workout Session",
+        "description": "45 minutes strength training + 20 minutes cardio",
+        "status": "Pending"
+    },
+    {
+        "task_id": 5,
+        "title": "Pay Internet Bill",
+        "description": "Last date tomorrow, pay through JazzCash",
+        "status": "Completed"
+    },
+    {
+        "task_id": 6,
+        "title": "Call Client",
+        "description": "Discuss UI changes and confirm deadline extension",
+        "status": "Pending"
+    },
+    {
+        "task_id": 7,
+        "title": "Finish Python Assignment",
+        "description": "OOP + File handling questions remaining",
+        "status": "Pending"
+    },
+    {
+        "task_id": 8,
+        "title": "Team Meeting",
+        "description": "Prepare slides for progress update",
+        "status": "Completed"
+    },
+    {
+        "task_id": 9,
+        "title": "Clean Workspace",
+        "description": "Organize desk, remove unused cables, wipe setup",
+        "status": "Pending"
+    },
+    {
+        "task_id": 10,
+        "title": "Read a Book",
+        "description": "20 pages of Atomic Habits",
+        "status": "Completed"
+    }
+]
