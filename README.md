@@ -1,4 +1,4 @@
-# Task Management System using Python & Flask
+# GetZygo: Task Management System using Python & Flask
 
 ## Project Overview
 
